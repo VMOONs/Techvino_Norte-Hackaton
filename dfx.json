@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "TecnoVinos_backend": {
+      "main": "src/TecnoVinos_backend/main.mo",
+      "type": "motoko"
+    },
+    "TecnoVinos_frontend": {
+      "dependencies": [
+        "TecnoVinos_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/TecnoVinos_frontend/src/index.html"
+      },
+      "source": [
+        "src/TecnoVinos_frontend/assets",
+        "dist/TecnoVinos_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
