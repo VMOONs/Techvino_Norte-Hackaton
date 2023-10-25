@@ -3,22 +3,288 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>TecnoVinos</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <title>TecnoVino_Norte</title>
+    
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.IMGA {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe UI';
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #fbfafa;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.container {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-grid;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s;
+}
+
+nav ul li::after{
+    content: "";
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+}
+
+nav ul li:hover {
+    color: #0a0462;
+}
+
+nav ul li:hover::after {
+    top: 50%;
+    opacity: 1;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #3a7ce0, #8a1d8a);
+
+  animation: gradientAnimation 5s ease infinite;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.showcase.active {
+    right: 300px;
+}
+
+.overplay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    mix-blend-mode: overlay;
+}
+
+.text {
+    position: relative;
+    z-index: 10;
+}
+
+.text h2 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #090404;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 5em;
+    font-weight: 700;
+    color: #040202;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 20px 0;
+    font-family: 400;
+    max-width: 700px;
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: #121577;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.text a:hover {
+    letter-spacing: 6px;
+}
+
+.social {
+    position: absolute;
+    z-index: 10p;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a {
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.social li a:hover {
+    transform: scale(0.5) translate(-15px);
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul {
+    position: relative;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+}
+
+.menu ul li a:hover {
+    color: #03a9f4;
+}
+
+@media (max-width: 991px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+    .text h2 {
+        font-size: 3em;
+    }
+    .text h3 {
+        font-size: 2em;
+    }
+}
+
+    </style>
   </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
+  <body class="body_b">
+    
+<section class="IMGA">
+    <section class="showcase">
+      <header>
+          <h2 class="logo">TecnoVino Norte</h2>
+          <div   class="container">
+              <nav>
+                  <ul>
+                      <li>Inicio</li>
+                      <li>Proceso</li>
+                      <li>Comidas</li>
+                      <li>Reservacion</li>
+                      <li>Contactanos</li>
+                  </ul>
+              </nav>
+          </div>
+      </header>
+      <div class="overplay"></div>
+      <div class="text">
+          <h2></h2>
+          <h3></h3>
+          <p>El viñedo de la UTNA, es un lugar verdaderamente especial que abarca 2.3 hectáreas de tierra dedicadas a la viticultura. Aquí, tres distintas variedades de vid prosperan en armonía: Macabeo, Merlot y Tempranillo. Cada variedad aporta su carácter único a la tierra y se convierte en un componente esencial en la producción de vinos excepcionales. <br>
+          Este viñedo es mucho más que solo una extensión de tierra; es un lugar de aprendizaje e innovación. Durante todo el año, tanto los dedicados profesores como los apasionados estudiantes de la UTNA trabajan incansablemente en su cuidado. Realizan prácticas y experimentos con el objetivo de mejorar la calidad de las uvas y, en última instancia, producir vinos de clase mundial. Esta experiencia práctica es invaluable para los estudiantes, ya que les brinda una comprensión profunda de los procesos vitivinícolas.</p>
+          <a id="login" href="#">Explorar</a>
+      </div>
+      <ul class="social">
+          <li><a href="https://www.facebook.com/utnaoficial"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+          <li><a href="https://www.instagram.com/utnags"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+          <li><a href="https://www.utna.edu.mx/utna/"><img src="https://images.vexels.com/media/users/3/205566/isolated/preview/c65f9eac24be62dfdcc5f509a32930f8-trazo-de-icono-de-sitio-web.png" width="45px"></a></li>
+      </ul>
+  </section>
+</section>
+  <script src="index.js"></script>
+  
   </body>
 </html>

@@ -1,19 +1,19 @@
-import { TecnoVinos_backend } from "../../declarations/TecnoVinos_backend";
+/*const menuToggle = document.querySelector('.toggle');
+const showcase = document.querySelector('.showcase');
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+if (menuToggle && showcase) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    showcase.classList.toggle('active');
+  });
+} else {
+  console.error("Elements with class names not found");
+}*/
 
-  const name = document.getElementById("name").value.toString();
+const login = document.getElementById('login');
 
-  button.setAttribute("disabled", true);
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await TecnoVinos_backend.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
+login.addEventListener('click', function() {
+    
+    window.location.href = 'comidas.html';
 });
